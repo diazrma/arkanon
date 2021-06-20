@@ -27,22 +27,22 @@ const turnOn = (device) => {
       btnLuzCozinha.classList.remove("btn-success");
       btnLuzCozinha.classList.add("btn-warning");
       btnLuzCozinha.innerHTML = "Apagar";
-      imgLuzCozinha.src = "../assets/light-on.png";
+      imgLuzCozinha.src = ".assets/light-on.png";
       break;
     case "luz_quarto":
       btnLuzQuarto.classList.add("btn-warning");
       btnLuzQuarto.innerHTML = "Apagar";
-      imgLuzQuarto.src = "../assets/light-on.png";
+      imgLuzQuarto.src = "assets/light-on.png";
       break;
     case "luz_banheiro":
       btnLuzBanheiro.classList.add("btn-warning");
       btnLuzBanheiro.innerHTML = "Apagar";
-      imgLuzBanheiro.src = "../assets/light-on.png";
+      imgLuzBanheiro.src = "assets/light-on.png";
       break;
     case "luz_externa":
       btnLuzExterna.classList.add("btn-warning");
       btnLuzExterna.innerHTML = "Apagar";
-      imgLuzExterna.src = "../assets/light-on.png";
+      imgLuzExterna.src = "assets/light-on.png";
       break;
       a;
     default:
