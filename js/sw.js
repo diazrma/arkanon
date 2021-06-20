@@ -1,4 +1,3 @@
-'use strict'
 const cache_name = 'static-v1';
 
 self.addEventListener('install', function (event) {
