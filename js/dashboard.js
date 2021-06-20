@@ -127,26 +127,23 @@ const getStatusDevice = (device) => {
       localStorage.setItem(device, snap.val());
     });
 };
-
-
+const endpoint = (device)=> {
+  fetch(localStorage.getItem('chaveWebhook'), {
+    'method': 'post',
+    'mode': 'no-cors',
+    'headers': {
+    'http-header-field':'Content-Type:application/json',
+     'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    },
+    'body':`value1=${device}`
+  });
+}
 
 
 //Luz Cozinha
 btnLuzCozinha.addEventListener("click", function () {
   getStatusDevice("luz_cozinha");
-
-  var url = 'https://maker.ifttt.com/trigger/arkanon/with/key/n4pYH-tTrMNJs3NffyrND1xjOxK8eHHDN7qYWoHSC58';
-var payload = {
-  'value1' : chaveLuzCozinha,
-  
-};
-
-var options = {
-  'method' : 'post',
-  'body': JSON.stringify(payload),
-  
-};
-  fetch(url,options);
+  endpoint(chaveLuzCozinha);
   if (localStorage.getItem("luz_cozinha") === "true") {
     firebase.database().ref("luz_cozinha").set(false);
     turnOff("luz_cozinha");
@@ -160,7 +157,7 @@ var options = {
 //Luz Quarto
 btnLuzQuarto.addEventListener("click", function () {
   getStatusDevice("luz_quarto");
-  fetch(chaveLuzQuarto, { mode: "no-cors" });
+  endpoint(chaveLuzQuarto);
   if (localStorage.getItem("luz_quarto") === "true") {
     firebase.database().ref("luz_quarto").set(false);
     turnOff("luz_quarto");
@@ -173,7 +170,7 @@ btnLuzQuarto.addEventListener("click", function () {
 //Luz Banheiro
 btnLuzBanheiro.addEventListener("click", function () {
   getStatusDevice("luz_banheiro");
-  fetch(chaveLuzBanheiro, { mode: "no-cors" });
+  endpoint(chaveLuzBanheiro);
   if (localStorage.getItem("luz_banheiro") === "true") {
     firebase.database().ref("luz_banheiro").set(false);
     turnOff("luz_banheiro");
@@ -186,7 +183,7 @@ btnLuzBanheiro.addEventListener("click", function () {
 //Luz Externa
 btnLuzExterna.addEventListener("click", function () {
   getStatusDevice("luz_externa");
-  fetch(chaveLuzExterna, { mode: "no-cors" });
+  endpoint(chaveLuzExterna);
   if (localStorage.getItem("luz_externa") === "true") {
     firebase.database().ref("luz_externa").set(false);
     turnOff("luz_externa");

@@ -6,6 +6,7 @@ const chaveLuzCozinha = document.getElementById("chaveLuzCozinha");
 const chaveLuzQuarto = document.getElementById("chaveLuzQuarto");
 const chaveLuzBanheiro = document.getElementById("chaveLuzBanheiro");
 const chaveLuzExterna = document.getElementById("chaveLuzExterna");
+const chaveWebhook = document.getElementById("chaveWebhook");
 const modoNoturno = document.getElementById("modoNoturno");
 const imgModenight = document.getElementById("imgModenight");
 const lightLabel = document.getElementById("lightLabel");
@@ -36,6 +37,9 @@ submitForm.addEventListener("click", function (e) {
   if (chaveLuzExterna.value) {
     localStorage.setItem("chaveLuzExterna", chaveLuzExterna.value);
   }
+  if (chaveWebhook.value) {
+    localStorage.setItem("chaveWebhook", chaveWebhook.value);
+  }
   if (modoNoturno.checked) {
     localStorage.setItem("modoNoturno", modoNoturno.checked);
   } else {
@@ -46,13 +50,6 @@ submitForm.addEventListener("click", function (e) {
 });
 
 window.onload = function () {
-  if (localStorage.getItem("modoNoturno") === "true") {
-    modoNoturno.checked = true;
-    document.body.style.backgroundColor = "black";
-    document.body.style.color = "white";
-    imgModenight.src = "../assets/day-mode.png";
-    lightLabel.src = "../assets/light-on.png";
-  }
   if (localStorage.getItem("chaveLuzCozinha")) {
     chaveLuzCozinha.value = localStorage.getItem("chaveLuzCozinha");
   }
@@ -64,5 +61,15 @@ window.onload = function () {
   }
   if (localStorage.getItem("chaveLuzExterna")) {
     chaveLuzExterna.value = localStorage.getItem("chaveLuzExterna");
+  }
+  if (localStorage.getItem("chaveWebhook")) {
+    chaveWebhook.value = localStorage.getItem("chaveWebhook");
+  }
+  if (localStorage.getItem("modoNoturno") === "true") {
+    modoNoturno.checked = true;
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
+    imgModenight.src = "../assets/day-mode.png";
+    lightLabel.src = "../assets/light-on.png";
   }
 };
