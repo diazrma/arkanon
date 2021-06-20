@@ -27,7 +27,7 @@ const turnOn = (device) => {
       btnLuzCozinha.classList.remove("btn-success");
       btnLuzCozinha.classList.add("btn-warning");
       btnLuzCozinha.innerHTML = "Apagar";
-      imgLuzCozinha.src = ".assets/light-on.png";
+      imgLuzCozinha.src = "assets/light-on.png";
       break;
     case "luz_quarto":
       btnLuzQuarto.classList.add("btn-warning");
