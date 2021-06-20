@@ -1,0 +1,15 @@
+{
+    "name": "Arkanon",
+    "short_name": "Arkanon",
+    "theme_color": "#2a0044",
+    "background_color": "#2a0044",
+    "display": "standalone",
+    "start_url": "/",
+    "icons": [
+      {
+        "src": "assets/logo.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      }
+    ]
+  }
