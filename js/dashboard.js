@@ -128,10 +128,25 @@ const getStatusDevice = (device) => {
     });
 };
 
+
+
+
 //Luz Cozinha
 btnLuzCozinha.addEventListener("click", function () {
   getStatusDevice("luz_cozinha");
-  fetch(chaveLuzCozinha, { mode: "no-cors" });
+
+  var url = 'https://maker.ifttt.com/trigger/arkanon/with/key/n4pYH-tTrMNJs3NffyrND1xjOxK8eHHDN7qYWoHSC58';
+var payload = {
+  'value1' : chaveLuzCozinha,
+  
+};
+
+var options = {
+  'method' : 'post',
+  'body': JSON.stringify(payload),
+  
+};
+  fetch(url,options);
   if (localStorage.getItem("luz_cozinha") === "true") {
     firebase.database().ref("luz_cozinha").set(false);
     turnOff("luz_cozinha");
