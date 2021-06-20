@@ -1,14 +1,17 @@
-const staticArkanon = "arkanon"
-const assets = [
-  "/",
-  "/index.html",
+const staticCacheName = 'arkanon';
 
-]
+const filesToCache = [
+ '/index.html'
+];
 
-self.addEventListener("install", installEvent => {
-  installEvent.waitUntil(
-    caches.open(staticArkanon).then(cache => {
-      cache.addAll(assets)
+// Cache on install
+this.addEventListener("install", event => {
+  this.skipWaiting();
+
+  event.waitUntil(
+    caches.open(staticCacheName)
+      .then(cache => {
+        return cache.addAll(filesToCache);
     })
   )
-})
+});
