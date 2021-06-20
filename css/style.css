@@ -1,0 +1,9 @@
+html,
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.bg-dark {
+  background: #000000;
+}
