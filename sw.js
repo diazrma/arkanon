@@ -1,5 +1,4 @@
 const staticCacheName = 'arkanon';
-
 const filesToCache = [
  '/index.html'
 ];
