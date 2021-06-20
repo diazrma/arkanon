@@ -1,7 +1,7 @@
 const staticArkanon = "arkanon"
 const assets = [
   "/",
-  "/index.html",
+  "../index.html",
 
 ]
 
