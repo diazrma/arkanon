@@ -17,3 +17,19 @@ const notification = (notifTitle,notifBody) => {
   };
   new Notification(notifTitle, options);
 };
+
+fetch('https://onesignal.com/api/v1/notifications', {
+    'method': 'post',
+    'mode': 'no-cors',
+    'headers': {
+    'Content-Type':' application/json ',
+    "app_id": "b2ffba06-7be4-436d-b59f-a7f7c861aa77",
+    },
+    'body':{
+        "app_id": "b2ffba06-7be4-436d-b59f-a7f7c861aa77",
+        "included_segments": ["Subscribed Users"],
+        "data": {"foo": "bar"},
+        "contents": {"en": "English Message"}
+      }
+  });
+
