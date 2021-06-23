@@ -18,6 +18,7 @@ const notification = (notifTitle,notifBody) => {
   new Notification(notifTitle, options);
 };
 
+const teste  =() => {
 fetch('https://onesignal.com/api/v1/notifications', {
     'method': 'post',
     'mode': 'no-cors',
@@ -33,3 +34,4 @@ fetch('https://onesignal.com/api/v1/notifications', {
       }
   });
 
+}
