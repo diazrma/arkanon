@@ -15,6 +15,9 @@ body {
   left:50%;
    
 }
+.ajs-cancel {
+  display: none;
+}
 @keyframes spinner {
   0% {
     transform: translate3d(-50%, -50%, 0) rotate(0deg);

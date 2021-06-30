@@ -58,7 +58,7 @@
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item" href="#">Sair</a>
+                <a id="logout" class="dropdown-item" href="#">Sair</a>
               </li>
             </ul>
           </li>
@@ -67,7 +67,7 @@
     </div>
   </nav>
   <br />
-  <div id="grid" class="container  d-flex justify-content-center align-items-center flex-column">
+  <div id="grid" class="container d-flex justify-content-center align-items-center flex-column">
     <h1>Arkanon</h1>
     <p>Configure os parametros de acesso aos seus gadgets em Configurações > Parâmetros</p>
     <div class="d-block">
@@ -76,11 +76,21 @@
     </div>
   </div>
   </div>
-  
-  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-  <script src="js/verifyAuth.js"></script>
-  <script src="js/config.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"
+    />
   <script src="js/load.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/verifyAuth.js"></script>
+  
   <script src="js/notify.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
